@@ -1,15 +1,39 @@
 import { SocialIcon } from 'react-social-icons'
+import Styles from './MySocial.module.css'
 
-const MySocial = () => {
+interface Status {
+  status: string,
+}
+
+const MySocial = ({ status }: Status) => {
+
+  const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)")
+  const bgColor = (darkThemeMq.matches) ? '#fafafa' : 'initial'
 
   return (
-    <>
-      <SocialIcon url='https://www.instagram.com/louise_omi/' style={{ height: 25, width: 25, marginRight: '5px' }} />
-      <SocialIcon url='https://www.pinterest.com/louise_omi/' style={{ height: 25, width: 25, marginRight: '5px' }} />
-      <SocialIcon url='https://www.tiktok.com/@zanktybro' style={{ height: 25, width: 25, marginRight: '5px' }} />
-      <SocialIcon url='email:louiseomig@gmail.com' network='email' style={{ height: 25, width: 25, marginRight: '5px' }} />
-      <SocialIcon url='https://www.t.me/louise_omi' style={{ height: 25, width: 25 }} />
-    </>
+    <div className={`${status} ${Styles.MySocial}`} >
+      <SocialIcon
+        url='https://www.instagram.com/louise_omi/'
+        style={{ height: 30, width: 30, marginRight: '10px' }}
+      />
+      <SocialIcon
+        url='https://www.pinterest.com/louise_omi/'
+        style={{ height: 30, width: 30, marginRight: '10px' }}
+      />
+      <SocialIcon
+        url='https://www.tiktok.com/@zanktybro'
+        style={{ height: 30, width: 30, marginRight: '10px' }}
+        bgColor={bgColor}
+      />
+      <SocialIcon
+        url='email:louiseomig@gmail.com'
+        network='email' style={{ height: 30, width: 30, marginRight: '10px' }}
+      />
+      <SocialIcon
+        url='https://www.t.me/louise_omi'
+        style={{ height: 30, width: 30 }}
+      />
+    </div>
   )
 }
 

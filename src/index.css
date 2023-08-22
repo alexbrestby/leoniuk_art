@@ -69,10 +69,19 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+  a {
+    color: teal;
+  }
   a:hover {
     color: #747bff;
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-social {
+    display: none;
   }
 }

@@ -1,0 +1,37 @@
+.MyLogo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.MyLogo:hover {
+  cursor: pointer;
+}
+
+.LogoImg {
+  height: 50px;
+  width: 50px;
+  background-image: url('../../../assets/images/logo_white.svg');
+  background-size: contain;
+  margin-right: 10px;
+}
+
+.LogoImg_dark {
+  background-image: url('../../../assets/images/logo_dark.svg')
+}
+
+.MyLogo:hover .LogoImg {
+  filter: drop-shadow(3px 3px #535bfc);
+}
+
+@media (max-width: 768px) {
+  .MyLogo {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 468px) {
+  .MyLogo h3 {
+    font-size: 1em;
+  }
+}
