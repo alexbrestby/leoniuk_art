@@ -8,10 +8,11 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  
+
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  --animation-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -29,6 +30,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -56,9 +58,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -66,15 +70,19 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
+    --animation-color: #66ff53;
     color: #213547;
     background-color: #ffffff;
   }
+
   a {
     color: teal;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
@@ -83,5 +91,68 @@ button:focus-visible {
 @media (max-width: 768px) {
   .footer-social {
     display: none;
+  }
+}
+
+/*blinking logo*/
+.hidden {
+  visibility: hidden;
+}
+
+.d-none {
+  display: none;
+}
+
+.anime {
+  animation: neon alternate infinite 2s;
+  animation-iteration-count: 2;
+  color: var(--animation-color);
+  text-shadow: 0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 62px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 121px #0fa;
+}
+
+@keyframes neon {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  79% {
+    color: #ffffff;
+  }
+
+  80% {
+    text-shadow: none;
+  }
+
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  82% {
+    color: #ffffff;
+    text-shadow: none;
+  }
+
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  92% {
+    color: #ffffff;
+    text-shadow: none;
+  }
+
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
   }
 }
