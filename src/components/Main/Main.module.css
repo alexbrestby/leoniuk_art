@@ -1,4 +1,5 @@
 .Main {
   display: flex;
   min-height: calc(100vh - 140px);
+  padding: 20px 10px;
 }

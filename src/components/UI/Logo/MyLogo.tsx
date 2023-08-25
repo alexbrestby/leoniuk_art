@@ -3,6 +3,7 @@ import Styles from './MyLogo.module.css'
 
 interface customStyle {
   fontSize: string,
+  status: string,
 }
 
 const MyLogo = (props: customStyle) => {
@@ -55,25 +56,27 @@ const MyLogo = (props: customStyle) => {
   const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)")
 
   return (
-    <a href='/' className={Styles.MyLogo} style={props}>
+    <a href='/' className={`${props.status === 'footer-hidden' ? 'footer-hidden' : ''} ${Styles.MyLogo}`} style={props} >
       <div className={!darkThemeMq.matches ? `${Styles.LogoImg} ${Styles.LogoImg_dark}` : Styles.LogoImg}></div>
-      {props.fontSize === '2em' ?
-        (<h3> leoniuk_
-          <span className="first_S">s</span>
-          <span className="first_T">t</span>
-          <span className="first_A">a</span>
-          <span className="first_R">r</span>
-          <span className="second_T hidden">t</span>
-          <span className="second_S hidden">s</span>
-        </h3>)
-        : (<h3>leoniuk_
-          <span>a</span>
-          <span>r</span>
-          <span>t</span>
-          <span>s</span>
-        </h3>)}
+      {
+        props.fontSize === '2em' ?
+          (<h3> leoniuk_
+            <span className="first_S">s</span>
+            <span className="first_T">t</span>
+            <span className="first_A">a</span>
+            <span className="first_R">r</span>
+            <span className="second_T hidden">t</span>
+            <span className="second_S hidden">s</span>
+          </h3>)
+          : (<h3>leoniuk_
+            <span>a</span>
+            <span>r</span>
+            <span>t</span>
+            <span>s</span>
+          </h3>)
+      }
 
-    </a>
+    </a >
   )
 }
 

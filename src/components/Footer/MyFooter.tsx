@@ -7,9 +7,9 @@ const MyFooter = () => {
 
   return (
     <footer className={Styles.MyFooter}>
-      <MyLogo fontSize='1em' />
-      <div className={Styles.MyCopy}>&copy;{currentYear}</div>
-      <MySocial status='footer-social' />
+      <MyLogo status='footer-hidden' fontSize='1em' />
+      <div className={`${Styles.MyCopy}`}>&copy;{currentYear}</div>
+      <MySocial status='footer-hidden' />
     </footer>
   )
 }

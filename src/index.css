@@ -72,7 +72,7 @@ button:focus-visible {
   :root {
     --animation-color: #66ff53;
     color: #213547;
-    background-color: #ffffff;
+    background-color: #fafafa;
   }
 
   a {
@@ -89,7 +89,7 @@ button:focus-visible {
 }
 
 @media (max-width: 768px) {
-  .footer-social {
+  .footer-hidden {
     display: none;
   }
 }
@@ -155,4 +155,31 @@ button:focus-visible {
     color: inherit;
     text-shadow: inherit;
   }
+}
+
+
+/* Masonry grig */
+
+.my-masonry-grid {
+  display: -webkit-box;
+  /* Not needed if autoprefixing */
+  display: -ms-flexbox;
+  /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px;
+  /* gutter size offset */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 30px;
+  /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column>div {
+  /* change div to reference your elements you put in <Masonry> */
+  background: grey;
+  margin-bottom: 30px;
 }

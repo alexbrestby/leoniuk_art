@@ -14,24 +14,24 @@ const MySocial = ({ status }: Status) => {
     <div className={`${status} ${Styles.MySocial}`} >
       <SocialIcon
         url='https://www.instagram.com/louise_omi/'
-        style={{ height: 30, width: 30, marginRight: '10px' }}
+        style={{ height: 40, width: 40, marginRight: '10px' }}
       />
       <SocialIcon
         url='https://www.pinterest.com/louise_omi/'
-        style={{ height: 30, width: 30, marginRight: '10px' }}
+        style={{ height: 40, width: 40, marginRight: '10px' }}
       />
       <SocialIcon
         url='https://www.tiktok.com/@zanktybro'
-        style={{ height: 30, width: 30, marginRight: '10px' }}
+        style={{ height: 40, width: 40, marginRight: '10px' }}
         bgColor={bgColor}
       />
       <SocialIcon
         url='email:louiseomig@gmail.com'
-        network='email' style={{ height: 30, width: 30, marginRight: '10px' }}
+        network='email' style={{ height: 40, width: 40, marginRight: '10px' }}
       />
       <SocialIcon
         url='https://www.t.me/louise_omi'
-        style={{ height: 30, width: 30 }}
+        style={{ height: 40, width: 40 }}
       />
     </div>
   )

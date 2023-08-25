@@ -6,7 +6,7 @@ const MyHeader = () => {
 
   return (
     <header className={Styles.MyHeader}>
-      <MyLogo fontSize='2em' />
+      <MyLogo fontSize='2em' status='header' />
       <MySocial status='header' />
     </header>
   )
