@@ -1,0 +1,105 @@
+.MyMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 0px;
+  z-index: 3;
+  background-color: #242424;
+  transition: all 0.6s ease-in-out;
+}
+
+.Active.MyMenu {
+  width: 35%;
+}
+
+.MyMenuBlur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  height: 100vh;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  transition: all 0.8s ease-in-out;
+}
+
+.Active.MyMenuBlur {
+  width: 100vw;
+}
+
+.MyMenuHeader {
+  position: absolute;
+  top: 0;
+  left: -500px;
+  width: 0;
+  padding-left: 70px;
+  transition: all 0.7s ease-in-out;
+  font-size: 3em;
+  z-index: 3;
+}
+
+.Active.MyMenuHeader {
+  width: 100%;
+  left: 0;
+  margin-top: -11px;
+}
+
+.MyMenuHeader a {
+  color: #ecf0f1;
+}
+
+.MyMenuList {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: -500px;
+  width: 0;
+  list-style: none;
+  font-size: 2em;
+  z-index: 3;
+  margin-top: 50px;
+  padding: 0 30px;
+  text-transform: uppercase;
+  transition: all 0.7s ease-in-out;
+  height: 90vh;
+}
+
+.Active.MyMenuList {
+  width: 100%;
+  left: 0;
+}
+
+.MyMenuItem {
+  font-size: 1em;
+}
+
+.LastItem {
+  margin-top: 50vh;
+}
+
+@media screen and (max-width: 768px) {
+  .Active.MyMenu {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Active.MyMenuHeader {
+    margin-top: 6px;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .Active.MyMenuHeader {
+    margin-top: 4px;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  .Active.MyMenuHeader {
+    margin-top: -4px;
+  }
+}

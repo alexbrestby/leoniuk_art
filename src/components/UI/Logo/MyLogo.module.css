@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+  margin-left: 40px;
 }
 
 .MyLogo:hover {
@@ -24,14 +25,35 @@
   filter: drop-shadow(3px 3px #535bfc);
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .MyLogo {
     margin-bottom: 10px;
+    margin-left: 0;
   }
 }
 
-@media (max-width: 468px) {
+@media screen and (max-width: 468px) {
   .MyLogo h3 {
     font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  .MyLogo h3 {
+    font-size: 0.75em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .LogoImg {
+    order: 1;
+    margin-right: 0;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .LogoImg {
+    display: none;
   }
 }
