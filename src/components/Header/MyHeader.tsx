@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MySocial from '../Social/MySocial';
 import MyLogo from '../UI/Logo/MyLogo';
 import MyBurger from '../UI/Burger/MyBurger';
@@ -22,12 +22,20 @@ const MyHeader = () => {
     setIsActive(!isActive);
   }
 
+  useEffect(() => {
+    if (isActive) {
+      document.body.classList.add('active');
+    } else {
+      document.body.classList.remove('active');
+    }
+  }, [isActive]);
+
   return (
     <header className={Styles.MyHeader}>
       <MyLogo fontSize='2em' status='header' />
       <MySocial status='header' />
       <MyBurger isActive={isActive} onClick={handleBurgerClick} />
-      <MyMenu items={items} isActive={isActive} />
+      <MyMenu isActive={isActive} items={items} />
     </header>
   )
 }

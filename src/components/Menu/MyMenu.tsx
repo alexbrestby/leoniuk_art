@@ -16,9 +16,6 @@ const MyMenu: React.FC<MyMenuProps> = ({ isActive, items }) => {
   return (
     <div className={`${Styles.MyMenu} ${isActive ? Styles.Active : ''}`}>
       <div className={`${Styles.MyMenuBlur} ${isActive ? Styles.Active : ''}`}></div>
-      <div className={`${Styles.MyMenuHeader} ${isActive ? Styles.Active : ''}`}>
-        <a href="/">назад</a>
-      </div>
       <ul className={`${Styles.MyMenuList} ${isActive ? `${Styles.Active}` : ''}`}>
         {items.map((item, index) => (
           <li key={index} className={`${Styles.MyMenuItem} ${index === items.length - 1 ? Styles.LastItem : ''}`}>

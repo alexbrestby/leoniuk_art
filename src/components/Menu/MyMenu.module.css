@@ -29,27 +29,6 @@
   width: 100vw;
 }
 
-.MyMenuHeader {
-  position: absolute;
-  top: 0;
-  left: -500px;
-  width: 0;
-  padding-left: 70px;
-  transition: all 0.7s ease-in-out;
-  font-size: 3em;
-  z-index: 3;
-}
-
-.Active.MyMenuHeader {
-  width: 100%;
-  left: 0;
-  margin-top: -11px;
-}
-
-.MyMenuHeader a {
-  color: #ecf0f1;
-}
-
 .MyMenuList {
   position: absolute;
   display: flex;
@@ -62,7 +41,6 @@
   z-index: 3;
   margin-top: 50px;
   padding: 0 30px;
-  text-transform: uppercase;
   transition: all 0.7s ease-in-out;
   height: 90vh;
 }
