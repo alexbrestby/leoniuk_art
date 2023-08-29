@@ -33,6 +33,12 @@
 }
 
 @media screen and (max-width: 468px) {
+  .MyLogo {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 468px) {
   .MyLogo h3 {
     font-size: 1em;
   }

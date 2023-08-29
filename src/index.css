@@ -40,11 +40,11 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+  overflow-y: overlay;
 }
 
 body.active {
   height: 100vh;
-  overflow-y: hidden;
 }
 
 h1 {
