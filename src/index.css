@@ -45,6 +45,7 @@ body {
 
 body.active {
   height: 100vh;
+  overflow: hidden;
 }
 
 h1 {
