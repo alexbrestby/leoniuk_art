@@ -53,7 +53,7 @@ const MyLogo = (props: customStyle) => {
   }, []);
 
 
-  const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)")
+  const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
 
   return (
     <a href='/' className={`${props.status === 'footer-hidden' ? 'footer-hidden' : ''} ${Styles.MyLogo}`} style={props} >
