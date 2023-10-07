@@ -2,6 +2,8 @@ import Masonry from 'react-masonry-css'
 import { useState, useEffect } from 'react';
 import Styles from './ImageList.module.css';
 
+const apiLink = import.meta.env.DEV ? 'http://localhost:5000' : 'https://api.leoniuk.dev';
+
 interface Image {
   id: string;
   url: string;
@@ -23,7 +25,7 @@ function ImageList() {
   }
 
   useEffect(() => {
-    fetch('https://api.leoniuk.dev/images')
+    fetch(`${apiLink}/images`)
       .then(res => res.json())
       .then(data => {
         setImages(data);
@@ -41,9 +43,9 @@ function ImageList() {
           <img
             className={Styles.MyImages}
             key={image.id}
-            src={`https://api.leoniuk.dev/uploads/img_webp/${image.url}`}
+            src={`${apiLink}/uploads/img_webp/${image.url}`}
             alt={image.title}
-            onClick={() => imagePopup(`https://api.leoniuk.dev/uploads/img_webp/${image.url}`)}
+            onClick={() => imagePopup(`${apiLink}/uploads/img_webp/${image.url}`)}
             width="500"
           />
         ))}
