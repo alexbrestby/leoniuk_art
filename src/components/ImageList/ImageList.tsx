@@ -11,6 +11,9 @@ interface Image {
 }
 
 function ImageList() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [fetching, setFetching] = useState(true);
+  const [totalCount, setTotalCount] = useState(0);
   const [images, setImages] = useState<Image[]>([]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null); // Состояние для увеличенного изображения
   const breakpointColumnsObj = {
@@ -25,12 +28,35 @@ function ImageList() {
   }
 
   useEffect(() => {
-    fetch(`${apiLink}/images`)
-      .then(res => res.json())
-      .then(data => {
-        setImages(data);
-      });
-  }, []);
+    if (fetching) {
+      // console.log('fetching')
+      fetch(`${apiLink}/images?page=${currentPage}&limit=12`)
+        .then(res => {
+          setTotalCount(parseInt(res.headers.get('x-total-count') as string));
+          return res.json();
+        })
+        .then(data => {
+          setImages([...images, ...data]);
+          setCurrentPage(prevState => prevState + 1);
+        })
+        .finally(() => setFetching(false));
+    }
+  }, [fetching, currentPage, images]);
+
+
+  useEffect(() => {
+    document.addEventListener('scroll', scrollHandler)
+    return function() {
+      document.removeEventListener('scroll', scrollHandler)
+    }
+  })
+
+  const scrollHandler = () => {
+    if (document.documentElement.scrollHeight - (document.documentElement.scrollTop + window.innerHeight) < 100 &&
+      images.length < totalCount) {
+      setFetching(true);
+    }
+  }
 
   return (
     <div>
